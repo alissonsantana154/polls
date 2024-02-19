@@ -1,9 +1,11 @@
 import fastify from 'fastify'
-import { createpoll } from './routes/create-poll'
+import { createPoll } from './routes/create-poll'
+import { getPoll } from './routes/get'
 
 const app = fastify()
 
-app.register(createpoll)
+app.register(createPoll)
+app.register(getPoll)
 app.listen({ port:3333 }).then(() => {
   console.log('HTTP server running!')
 })
